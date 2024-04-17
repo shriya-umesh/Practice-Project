@@ -13,11 +13,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
       steps:
+        - name: Get code
+          uses: action/checkout@v3
         - name: Test Code
           run: npm run test
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Get code
+        uses: action/checkout@v3
       - name: Biuld Code
         run: npm run build
       - name: Deploy Code
